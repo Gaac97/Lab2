@@ -20,10 +20,7 @@ class solicitudes {
         this.receptor = receptor;
     }
 
-    solicitudes(String nombre, String usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     public String getEmisor() {
         return emisor;
     }

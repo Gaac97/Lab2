@@ -98,6 +98,7 @@ public class Laboratorio2_Gabriel_Alvarado {
                 for (Usuario m : lista) {
                     if (m.getUsername().equalsIgnoreCase(usuario) && m.getPassword().equalsIgnoreCase(password)) {
                         t = true;
+                        JOptionPane.showMessageDialog(null, "INGRESO EXITOSAMENTE");
                     }
                     String opcion;
                     int amigos = 0;
@@ -118,7 +119,7 @@ public class Laboratorio2_Gabriel_Alvarado {
                             boolean friend = false;
                             for (Usuario y : lista) {
                                 if (y instanceof Usuario) {
-                                    s += "" + lista.indexOf(t) + "- " + t + "\n";
+                                    s += "" + lista.indexOf(y) + "- " + y + "\n";
                                 }
                             }
                             JOptionPane.showMessageDialog(null, s);
@@ -136,7 +137,7 @@ public class Laboratorio2_Gabriel_Alvarado {
                                 if (friend == true) {
                                     if (cont == pos) {
                                         for (Usuario lista1 : lista) {
-                                           lista1.getSolicitudes(new solicitudes(lista1.getNombre(), usuario));
+                                            lista1.getSolicitudes(new solicitudes(s, lista));
                                         }
                                     }
                                     cont++;
@@ -146,8 +147,19 @@ public class Laboratorio2_Gabriel_Alvarado {
 
                             break;
                         case "b":
+                            String s2 = "";
+                            ArrayList<solicitudes> lista2 = new ArrayList();
+                            for (solicitudes q : lista2) {
+                                if (q instanceof solicitudes) {
+                                    s2 += "" + lista.indexOf(q) + "- " + q + "\n";
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, s2);
+
                             break;
+
                         case "c":
+                            
                             break;
                         case "d":
                             break;
@@ -158,6 +170,9 @@ public class Laboratorio2_Gabriel_Alvarado {
                         case "f":
 
                             break;
+                            
+                        case "g":
+                            break;
                     }
 
                 }
@@ -165,5 +180,4 @@ public class Laboratorio2_Gabriel_Alvarado {
         }
 
     }
-
 }

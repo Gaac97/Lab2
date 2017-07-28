@@ -18,6 +18,7 @@ public class Usuario {
     private String username;
     private String password;
     private ArrayList solicitudes;
+    private ArrayList mensajes;
 
     public Usuario(ArrayList solicitudes) {
         this.solicitudes = solicitudes;
