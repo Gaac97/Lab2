@@ -6,6 +6,7 @@
 package laboratorio2_gabriel_alvarado;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -112,18 +113,20 @@ public class Laboratorio2_Gabriel_Alvarado {
                             + "f-Eliminar amigos \n");
 
                     switch (opcion) {
+
                         case "a":
-                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Agregar Amigos"));
-                            String s = "";
-                            int cont = 0;
-                            boolean friend = false;
+                            String s2 = "";
                             for (Usuario y : lista) {
                                 if (y instanceof Usuario) {
-                                    s += "" + lista.indexOf(y) + "- " + y + "\n";
+                                    s2 += "" + lista.indexOf(y) + "- " + y + "\n";
                                 }
                             }
-                            JOptionPane.showMessageDialog(null, s);
+                            JOptionPane.showMessageDialog(null, s2);
                             System.out.println("");
+                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Agregar Amigos"));
+                            
+                            int cont = 0;
+                            boolean friend = false;
 
                             for (Usuario z : lista) {
                                 if (z.getUsername().equalsIgnoreCase(usuario)) {
@@ -137,7 +140,7 @@ public class Laboratorio2_Gabriel_Alvarado {
                                 if (friend == true) {
                                     if (cont == pos) {
                                         for (Usuario lista1 : lista) {
-                                            lista1.getSolicitudes(new solicitudes(s, lista));
+                                            lista1.getSolicitudes(new solicitudes(s2, lista));
                                         }
                                     }
                                     cont++;
@@ -147,19 +150,25 @@ public class Laboratorio2_Gabriel_Alvarado {
 
                             break;
                         case "b":
-                            String s2 = "";
+                            String s3= "";
                             ArrayList<solicitudes> lista2 = new ArrayList();
                             for (solicitudes q : lista2) {
                                 if (q instanceof solicitudes) {
-                                    s2 += "" + lista.indexOf(q) + "- " + q + "\n";
+                                    s3 += "" + lista.indexOf(q) + "- " + q + "\n";
                                 }
                             }
-                            JOptionPane.showMessageDialog(null, s2);
+                            JOptionPane.showMessageDialog(null, s3);
 
                             break;
 
                         case "c":
+                            JOptionPane.showMessageDialog(null, "MENSAJES");
+                            Date fecha = new Date();
+                            JOptionPane.showMessageDialog(null, fecha);
+                            String mensajes = "";
                             
+                            mensajes = JOptionPane.showInputDialog("Envie un mensaje");
+
                             break;
                         case "d":
                             break;
@@ -170,7 +179,7 @@ public class Laboratorio2_Gabriel_Alvarado {
                         case "f":
 
                             break;
-                            
+
                         case "g":
                             break;
                     }
